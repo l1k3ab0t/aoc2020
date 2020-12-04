@@ -13,9 +13,8 @@ p2_patterns=["byr:((19[2-9]\d)|200[0-3])",
             "hcl:#(\d|[abcdef]){6}", 
             "pid:(\d){9}(?!\d)"]
 
-solution1 = [not any(elem is None for elem in  map(lambda x: re.search(*x),zip(p1_patterns, repeat(passport))))  for passport in passports].count(True)
+solution1 = [not any(elem is None for elem in  map(lambda x: re.search(*x),zip(p1_patterns, repeat(passport)))) for passport in passports].count(True)
 print("Part 1", solution1)
 
-
-solution2 = [not any(elem is None for elem in  map(lambda x: re.search(*x),zip(p2_patterns, repeat(passport))))  for passport in passports].count(True)
+solution2 = [not any(elem is None for elem in  map(lambda x: re.search(*x),zip(p2_patterns, repeat(passport)))) for passport in passports].count(True)
 print("Part 2", solution2)
