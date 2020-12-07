@@ -1,2 +1,3 @@
-a = [[set(y) for y in g.split()] for g in open("input").read().split("\n\n")] 
-print(sum(map(lambda x:len(set.union(*x)),a)),sum(map(lambda x:len(set.intersection(*x)),a)))
+a=[[*map(set,g.split())] for g in open("input").read().split("\n\n")]
+print(sum(len(set.union(*x))for x in a),sum(len(set.intersection(*x))for x in a))
+#print([sum([len(f(*x))for x in a])for f in[set.union,set.intersection]])
