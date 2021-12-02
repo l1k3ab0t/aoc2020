@@ -18,12 +18,12 @@ for line in open("input"):
 
 
 def p1(key): 
-    return subbags[key].union(*map(p1, subbags[key]))
+    return len(*subbags[key].union(*map(p1, subbags[key])))
 
 
 def p2(key):
     return sum([cnt*p2(bag)+cnt for cnt, bag in supbags[key]])
 
 
-print(len(p1("shiny gold")))
+print(p1("shiny gold"))
 print(p2("shiny gold"))
